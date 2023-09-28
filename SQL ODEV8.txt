@@ -1,0 +1,54 @@
+1) CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    birthday DATE,
+    email VARCHAR(100)
+);
+
+
+2) -- Örnek 1: İsim güncelleme
+UPDATE employee
+SET name = 'Yeni İsim'
+WHERE id = 1;
+
+-- Örnek 2: Doğum tarihi güncelleme
+UPDATE employee
+SET birthday = '1990-01-15'
+WHERE id = 2;
+
+-- Örnek 3: E-posta güncelleme
+UPDATE employee
+SET email = 'yeniemail@example.com'
+WHERE id = 3;
+
+-- Örnek 4: İsim ve doğum tarihi güncelleme
+UPDATE employee
+SET name = 'Yeni Ad', birthday = '1985-07-20'
+WHERE id = 4;
+
+-- Örnek 5: Tüm sütunları güncelleme
+UPDATE employee
+SET name = 'Yeni Ad', birthday = '1992-03-10', email = 'yeni@example.com'
+WHERE id = 5;
+
+
+3) -- Örnek 1: İsim bazında silme
+DELETE FROM employee
+WHERE name = 'Silinecek İsim';
+
+-- Örnek 2: Doğum tarihi bazında silme
+DELETE FROM employee
+WHERE birthday = '1990-01-15';
+
+-- Örnek 3: E-posta bazında silme
+DELETE FROM employee
+WHERE email = 'sil@example.com';
+
+-- Örnek 4: İsim ve doğum tarihi bazında silme
+DELETE FROM employee
+WHERE name = 'Sil Ad' AND birthday = '1985-07-20';
+
+-- Örnek 5: ID bazında silme
+DELETE FROM employee
+WHERE id = 10;
+
